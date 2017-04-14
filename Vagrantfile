@@ -44,7 +44,7 @@ Vagrant.configure("2") do |config|
   end
 
   # Shared directory between guest and host.
-  config.vm.synced_folder "/Users/mgoodnight/Documents/vagrant_share", "/home/vagrant/vscode"
+  config.vm.synced_folder "/home/matthew/Documents/vagrant_share", "/home/vagrant/vscode"
 
   ######################### PROVISIONING #############################
   
@@ -65,6 +65,9 @@ Vagrant.configure("2") do |config|
 
   # MySQL
   config.vm.provision "shell", path: "provisions/scripts/mysql_install.sh"
+
+  # SQLite 
+  config.vm.provision "shell", path: "provisions/scripts/sqlite_install.sh"
 
   #Redis
   config.vm.provision "shell", path: "provisions/scripts/redis_install.sh"
