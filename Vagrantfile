@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 4200, host: 4200, auto_correct: true
   config.vm.network :forwarded_port, guest: 8019, host: 8019, auto_correct: true
  
- # Open up port for MySQL                                                                                                                                                           
+ # Open up port for MySQL - be sure to grant priviledges to user you are connecting with 
   config.vm.network :forwarded_port, guest: 3306, host: 3306, auto_cirrect: true
 
   # Open up port for Redis  
