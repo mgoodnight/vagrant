@@ -52,35 +52,35 @@ Vagrant.configure("2") do |config|
   end
 
   # Shared directory between guest and host.
-  config.vm.synced_folder "/home/matthew/Documents/vagrant_share", "/home/vagrant/vscode"
+  config.vm.synced_folder "/home/matthew/Documents/vagrant_share", "/home/ubuntu/vscode"
 
   ######################### PROVISIONING #############################
   
   #As root user:
   #OS packages and common tools (includes git)
-  config.vm.provision "shell", path: "provisions/scripts/os_essential_packages.sh"
+  config.vm.provision "shell", path: "scripts/os_essential_packages.sh"
 
   #As root user
   #perlbrew and such.
-  config.vm.provision "shell", path: "provisions/scripts/developer_perl_tools_as_root.sh"
+  config.vm.provision "shell", path: "scripts/perl_tools_root.sh"
 
   #As vagrant user
   #dzil, pertidy and such
-  config.vm.provision "shell", path: "provisions/scripts/developer_perl_tools_as_user.sh", privileged: false
+  config.vm.provision "shell", path: "scripts/perl_tools_user.sh", privileged: false
 
   #vim, bash configs
   config.vm.provision "shell", path: "provisions/scripts/environment_configs.sh", privileged: false
 
   # MySQL
-  config.vm.provision "shell", path: "provisions/scripts/mysql_install.sh"
+  config.vm.provision "shell", path: "scripts/mysql_install.sh"
 
   # SQLite 
-  config.vm.provision "shell", path: "provisions/scripts/sqlite_install.sh"
+  config.vm.provision "shell", path: "scripts/sqlite_install.sh"
 
   #Redis
-  config.vm.provision "shell", path: "provisions/scripts/redis_install.sh"
+  config.vm.provision "shell", path: "scripts/redis_install.sh"
 
   #Javascript - NodeJS/npm, angluar-cli
-  config.vm.provision "shell", path: "provisions/scripts/javascript_install.sh"
+  config.vm.provision "shell", path: "scripts/javascript_install.sh"
 
 end
