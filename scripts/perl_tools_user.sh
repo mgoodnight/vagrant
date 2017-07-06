@@ -16,7 +16,7 @@ source $PERLBREW_ROOT/etc/bashrc
 perlbrew switch $PERL_VERSION
 
 #... Perl development tools installed into this perlbrew environment
-cpanm Module::Util Perl::Critic Perl::Metrics::Simple Perl::Tidy
+cpanm Module::Util Perl::Critic Perl::Metrics::Simple Perl::Tidy Module::Install
 
 #... failed to install nicely so force it
 cpanm IO::Prompt --notest --force
