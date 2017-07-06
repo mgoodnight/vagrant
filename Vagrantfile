@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
 
   # Common dev ports
   config.vm.network :forwarded_port, guest: 5000, host: 5000, auto_correct: true
-  config.vm.network :forwarded_port, guest: 4200, host: 4200, auto_correct: true
+  config.vm.network :forwarded_port, guest: 5001, host: 5001, auto_correct: true
   config.vm.network :forwarded_port, guest: 8019, host: 8019, auto_correct: true
  
  # Open up port for MySQL - be sure to grant priviledges to user you are connecting with 
@@ -52,7 +52,7 @@ Vagrant.configure("2") do |config|
   end
 
   # Shared directory between guest and host.
-  config.vm.synced_folder "/home/matthew/Documents/vagrant_share", "/home/ubuntu/vscode"
+  config.vm.synced_folder "/Users/mgoodnight/Documents/vagrant_share", "/home/ubuntu/vscode"
 
   ######################### PROVISIONING #############################
   
@@ -69,7 +69,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "scripts/perl_tools_user.sh", privileged: false
 
   #vim, bash configs
-  config.vm.provision "shell", path: "provisions/scripts/environment_configs.sh", privileged: false
+  config.vm.provision "shell", path: "scripts/environment_configs.sh", privileged: false
 
   # MySQL
   config.vm.provision "shell", path: "scripts/mysql_install.sh"
