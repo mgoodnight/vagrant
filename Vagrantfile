@@ -84,6 +84,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "scripts/redis_install.sh"
 
   #Javascript - NodeJS/npm, angluar-cli
-  config.vm.provision "shell", path: "scripts/javascript_install.sh"
+  #config.vm.provision "shell", path: "scripts/javascript_install.sh"
 
 end

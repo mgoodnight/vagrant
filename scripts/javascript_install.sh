@@ -11,4 +11,4 @@ apt-get -q -y install nodejs
 npm install npm@latest -g
 
 # Angular-cli to make life that much easier...
-npm install -g @angular/cli@latest
+#npm install -g @angular/cli@latest

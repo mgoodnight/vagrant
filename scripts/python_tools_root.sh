@@ -2,7 +2,7 @@
 
 echo "START - Python dev tools install script - ROOT Part"
 
-sudo apt-get -y install python pip
+sudo apt-get -y install python-pip
 sudo apt-get -y install virutalenv
 
 mkdir ~/.virtualenvs
