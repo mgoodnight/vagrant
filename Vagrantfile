@@ -69,7 +69,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "scripts/perl_tools_user.sh", privileged: false
 
   # Python
-  config.vm.provision "shell", path: "scripts/python_tools_root.sh"
+  config.vm.provision "shell", path: "scripts/python_root.sh"
 
   #vim, bash configs
   config.vm.provision "shell", path: "scripts/environment_configs.sh", privileged: false
